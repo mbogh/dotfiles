@@ -46,6 +46,7 @@ fi
 # Aliases
 alias zshrc="code ~/.zshrc"
 alias bi="bundle install"
+alias bu="bundle update"
 alias be="bundle exec"
 alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
 alias email="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]' | cat <(echo -n) - <(echo '@boegh.co') | tr -d '\n' | pbcopy && pbpaste && echo"
