@@ -1,0 +1,6 @@
+alias zshrc="code ~/.zshrc"
+alias bi="bundle install"
+alias bu="bundle update"
+alias be="bundle exec"
+alias bf="bundle exec fastlane"
+alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"

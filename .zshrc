@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/Users/morten.boegh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -30,11 +30,19 @@ export LC_COLLATE=en_US.UTF-8
 export LC_MONETARY=en_US.UTF-8
 export LC_MESSAGES=en_US.UTF-8
 
+# GPG
+export GPG_TTY=$(tty)
+
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# Rbenv
-eval "$(rbenv init -)"
+# if hash asdf 2>/dev/null; then
+  # asdf
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+# else
+#   # Rbenv
+#   eval "$(rbenv init -)"
+# fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -44,9 +52,4 @@ else
 fi
 
 # Aliases
-alias zshrc="code ~/.zshrc"
-alias bi="bundle install"
-alias bu="bundle update"
-alias be="bundle exec"
-alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
-alias email="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]' | cat <(echo -n) - <(echo '@boegh.co') | tr -d '\n' | pbcopy && pbpaste && echo"
+source .aliases
