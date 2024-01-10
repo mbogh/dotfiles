@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/morten.boegh/.oh-my-zsh"
 
@@ -5,7 +12,7 @@ export ZSH="/Users/morten.boegh/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -36,13 +43,10 @@ export GPG_TTY=$(tty)
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# if hash asdf 2>/dev/null; then
-  # asdf
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
-# else
-#   # Rbenv
-#   eval "$(rbenv init -)"
-# fi
+# GO
+export PATH="$PATH:/Users/morten.boegh/go/bin"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -52,4 +56,11 @@ else
 fi
 
 # Aliases
-source .aliases
+source ~/.aliases
+
+# Exports
+source ~/.exports
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

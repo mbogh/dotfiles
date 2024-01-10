@@ -1,11 +1,17 @@
 # dotfiles
-. dot . dot . dot .
 
-# Usage
+Using [GNU Stow](https://www.gnu.org/software/stow/)
+
+## Getting Started
+
+`brew install stow`
+
+## Installation
+
 1. `cd`
-2. `git clone https://github.com/mbogh/dotfiles .dotfiles`
-3. `ln -s ~/.dotfiles/.zshrc ~/.zshrc`
-4. `ln -s ~/.dotfiles/.aliases ~/.aliases`
+2. `git clone https://github.com/mbogh/dotfiles`
+3. `./install.sh`
 
-# Inspiration
-Felix Krause
+## Credit
+
+[Cody Reichert](https://github.com/CodyReichert/dotfiles)
